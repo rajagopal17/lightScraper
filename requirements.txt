@@ -1,0 +1,7 @@
+# Mirrors the dependency bounds in pyproject.toml, for environments/tools
+# that expect a requirements.txt (e.g. `pip install -r requirements.txt`)
+# instead of resolving them from the package metadata. Keep in sync with
+# [project.dependencies] in pyproject.toml.
+playwright>=1.40
+openai>=3.0,<4
+tzdata; sys_platform == "win32"
