@@ -1,0 +1,12 @@
+services:
+  scraper:
+    build: .
+    image: adb-scraper:latest
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    # One-shot job, not a long-running service: `docker compose run --rm scraper`.
+    # Re-run on a schedule from the host (cron / Task Scheduler) or point a
+    # scheduler container at the same image.
